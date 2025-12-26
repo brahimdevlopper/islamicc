@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التوازن  | تقييم الشخصية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a5f7a;
+            --light-blue: #2d8daa;
+            --gold: #d4af37;
+            --light-gold: #f4e4a6;
+            --dark-green: #2e8b57;
+            --light-green: #57cc99;
+            --purple: #6a5acd;
+            --orange: #ff8c00;
+            --teal: #20b2aa;
+            --dark-bg: #0a192f;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+            text-align: right;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .logo h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--light-gold);
+            font-weight: 300;
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--light-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-family: 'Amiri', serif;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to left, var(--gold), var(--orange));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Traits Section */
+        .traits-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .trait-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid;
+            text-align: center;
+        }
+
+        .trait-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .trait-card.ethics { border-color: var(--dark-green); }
+        .trait-card.balance { border-color: var(--primary-blue); }
+        .trait-card.discipline { border-color: var(--purple); }
+        .trait-card.detachment { border-color: var(--orange); }
+        .trait-card.harmony { border-color: var(--teal); }
+
+        .trait-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .ethics .trait-icon { color: var(--dark-green); }
+        .balance .trait-icon { color: var(--primary-blue); }
+        .discipline .trait-icon { color: var(--purple); }
+        .detachment .trait-icon { color: var(--orange); }
+        .harmony .trait-icon { color: var(--teal); }
+
+        .trait-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .trait-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Assessment Section */
+        .assessment-section {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+        }
+
+        .assessment-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .assessment-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .assessment-intro h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .assessment-intro p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .question-counter {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dimension-tag {
+            background: linear-gradient(to left, var(--primary-blue), var(--light-blue));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to left, var(--gold), var(--orange));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-weight: 600;
+        }
+
+        .response-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .response-btn {
+            padding: 1.2rem 1.5rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            background: white;
+            text-align: right;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .response-btn:hover {
+            border-color: var(--light-blue);
+            background-color: rgba(45, 141, 170, 0.05);
+        }
+
+        .response-btn.selected {
+            border-color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+
+        .response-btn span {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .response-btn small {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .nav-btn.prev {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .nav-btn.next {
+            background: linear-gradient(to left, var(--primary-blue), var(--light-blue));
+            color: white;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 5rem 0;
+            background-color: white;
+            display: none;
+        }
+
+        .results-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .score-summary {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .overall-score {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .score-text {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .score-message {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .radar-chart-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .radar-chart {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 400px;
+            position: relative;
+        }
+
+        .chart-area {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dimension-scores {
+            margin-top: 2rem;
+        }
+
+        .dimension-score {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            background: var(--light-bg);
+        }
+
+        .dimension-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            min-width: 180px;
+        }
+
+        .dimension-score-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            flex-grow: 1;
+            margin: 0 1.5rem;
+            overflow: hidden;
+        }
+
+        .dimension-score-fill {
+            height: 100%;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 1.5s ease;
+        }
+
+        .dimension-score-value {
+            font-weight: 700;
+            min-width: 40px;
+            text-align: left;
+        }
+
+        .recommendations {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .recommendations h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .recommendation-list {
+            list-style: none;
+        }
+
+        .recommendation-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .recommendation-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rec-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .action-btn.retake {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .action-btn.download {
+            background: linear-gradient(to left, var(--dark-green), var(--light-green));
+            color: white;
+        }
+
+        .action-btn.share {
+            background: linear-gradient(to left, var(--purple), #8a79f0);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-gold);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-right: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b7c3;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .copyright span {
+            color: var(--gold);
+        }
+
+        .arabic-quote {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--light-gold);
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* AI Analysis */
+        .ai-analysis {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-right: 5px solid var(--gold);
+        }
+
+        .ai-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-icon {
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .ai-header h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        .ai-analysis-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .ai-thinking {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+            color: var(--text-light);
+        }
+
+        .ai-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            animation: aiPulse 1.5s infinite;
+        }
+
+        .ai-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .ai-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes aiPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive Design - SIMPLIFIED */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                display: none;
+                width: 100%;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .question-card {
+                padding: 1.5rem;
+            }
+            
+            .question-text {
+                font-size: 1.2rem;
+            }
+            
+            .response-btn {
+                padding: 1rem;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+            
+            .radar-chart {
+                height: 300px;
+            }
+            
+            .dimension-score {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .dimension-name {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .dimension-score-bar {
+                width: 100%;
+                margin: 0;
+            }
+            
+            .dimension-score-value {
+                text-align: right;
+                width: 100%;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .ai-analysis {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .traits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .radar-chart {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div>
+                    <h1>التوازن </h1>
+                    <span>تقييم الشخصية بناءً على سيرة الرسول ﷺ</span>
+                </div>
+            </div>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#traits">السمات النبوية</a></li>
+                    <li><a href="#assessment">التقييم</a></li>
+                    <li><a href="#about">عن المشروع</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>قيّم شخصيتك بناءً على القيم النبوية</h2>
+            <p>اكتشف مدى قربك من تجسيد السمات المتوازنة لشخصية رسول الله محمد ﷺ من خلال تقييم تفاعلي مصمم للنمو الشخصي والتطوير الروحي.</p>
+            <button class="cta-button" id="start-assessment-btn">ابدأ التقييم الآن</button>
+        </div>
+    </section>
+
+    <!-- Traits Section -->
+    <section class="traits-section" id="traits">
+        <div class="container">
+            <div class="section-title">
+                <h2>الأبعاد الخمسة للشخصية النبوية</h2>
+                <p>يقيس تقييمنا هذه الصفات الأساسية التي تمثل الشخصية المتوازنة لرسول الله محمد ﷺ</p>
+            </div>
+            <div class="traits-grid">
+                <div class="trait-card ethics">
+                    <div class="trait-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>الخلق القويم</h3>
+                    <p>الصدق، الأمانة، العدل، والوفاء بالعهود في جميع المعاملات.</p>
+                </div>
+                <div class="trait-card balance">
+                    <div class="trait-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>التوازن العاطفي</h3>
+                    <p>الصبر، الاعتدال في الغضب، الرحمة، والتحكم في ردود الفعل بحكمة.</p>
+                </div>
+                <div class="trait-card discipline">
+                    <div class="trait-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>الانضباط والمواظبة</h3>
+                    <p>الانتظام في العبادة، الوفاء بالمسؤوليات، والحفاظ على العادات الحسنة.</p>
+                </div>
+                <div class="trait-card detachment">
+                    <div class="trait-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>الزهد في الشهوات الضارة</h3>
+                    <p>القناعة بالقليل، تجنب الإفراط، وتقديم الروحي على المادي.</p>
+                </div>
+                <div class="trait-card harmony">
+                    <div class="trait-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>التوازن الدنيوي الروحي</h3>
+                    <p>موازنة العبادة مع العمل، واجبات الأسرة، والمسؤوليات المجتمعية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section class="assessment-section" id="assessment">
+        <div class="container assessment-container">
+            <div class="assessment-intro" id="assessment-intro">
+                <h3>مستعد لتقييم شخصيتك؟</h3>
+                <p>يحتوي هذا التقييم على 5 أسئلة مُعدّاً بعناية لمساعدتك في تقييم شخصيتك عبر خمسة أبعاد للتوازن النبوي.</p>
+                <p>أجب بصدق بناءً على سلوكك ومواقفك المعتادة. لا توجد إجابات صحيحة أو خاطئة - فقط فرص للوعي الذاتي والنمو.</p>
+                <div class="question-counter">5 أسئلة | 2-3 دقائق</div>
+                <button class="cta-button" id="begin-btn">ابدأ التقييم</button>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question-card" id="question-1">
+                <div class="question-header">
+                    <div class="dimension-tag">الخلق القويم</div>
+                    <div>السؤال 1 من 5</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-1"></div>
+                </div>
+                <div class="question-text">
+                    عندما تعد شخصاً بوعد، كم مرة تفي به بغض النظر عن الإزعاج أو المشقة؟
+                </div>
+                <div class="response-options">
+                    <button class="response-btn" data-value="1">
+                        <span>1 - نادراً، إلا إذا كان مناسباً لي</span>
+                        <small>أحياناً أنسى أو أُفضل راحتي على التزاماتي</small>
+                    </button>
+                    <button class="response-btn" data-value="2">
+                        <span>2 - أحياناً، حسب الموقف</span>
+                        <small>أحاول الوفاء بالوعود ولكن قد أتجاهلها إذا تغيرت الظروف</small>
+                    </button>
+                    <button class="response-btn" data-value="3">
+                        <span>3 - عادةً، أبذل جهداً للوفاء بالتزاماتي</span>
+                        <small>أعتبر الوعود مهمة وأحاول الوفاء بها عموماً</small>
+                    </button>
+                    <button class="response-btn" data-value="4">
+                        <span>4 - غالباً، حتى عندما يتطلب ذلك تضحية</span>
+                        <small>أولويّة الوفاء بكلمتي، حتى لو كلفني ذلك شخصياً</small>
+                    </button>
+                    <button class="response-btn" data-value="5">
+                        <span>5 - دائماً، كلمتي عهد</span>
+                        <small>كالنبي ﷺ الذي كان يُعرف بـ "الصادق الأمين"</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev" onclick="prevQuestion()" disabled>السابق</button>
+                    <button class="nav-btn next" onclick="nextQuestion()">السؤال التالي</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card" id="question-2">
+                <div class="question-header">
+                    <div class="dimension-tag">التوازن العاطفي</div>
+                    <div>السؤال 2 من 5</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-2"></div>
+                </div>
+                <div class="question-text">
+                    عندما يتحدث إليك شخص بقسوة أو ظلم، كيف تكون استجابتك المعتادة؟
+                </div>
+                <div class="response-options">
+                    <button class="response-btn" data-value="1">
+                        <span>1 - أرد فوراً بنفس القسوة</span>
+                        <small>أؤمن بإعطاء الناس جرعة من علاجهم</small>
+                    </button>
+                    <button class="response-btn" data-value="2">
+                        <span>2 - أتحول للدفاع عن نفسي وأجادل</span>
+                        <small>أشعر بالحاجة للدفاع عن نفسي وتصحيح الموقف فوراً</small>
+                    </button>
+                    <button class="response-btn" data-value="3">
+                        <span>3 - أبقى صامتاً لكني أحتفظ بمشاعر سلبية داخلياً</span>
+                        <small>أتجنب المواجهة لكني أحتفظ بمشاعر سلبية</small>
+                    </button>
+                    <button class="response-btn" data-value="4">
+                        <span>4 - أتوقف ثم أرد بهدوء بعد التفكير</span>
+                        <small>أتحكم في رد فعلي الأولي وأختار ردة فعل متزنة</small>
+                    </button>
+                    <button class="response-btn" data-value="5">
+                        <span>5 - أرد بلطف وأسعى للتفهم</span>
+                        <small>كرد النبي ﷺ على أهل الطائف برحمة وعفو</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev" onclick="prevQuestion()">السابق</button>
+                    <button class="nav-btn next" onclick="nextQuestion()">السؤال التالي</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card" id="question-3">
+                <div class="question-header">
+                    <div class="dimension-tag">الانضباط والمواظبة</div>
+                    <div>السؤال 3 من 5</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-3"></div>
+                </div>
+                <div class="question-text">
+                    كم مرة تلتزم بروتين يومي أو أسبوعي للعبادات والعادات الحسنة؟
+                </div>
+                <div class="response-options">
+                    <button class="response-btn" data-value="1">
+                        <span>1 - نادراً ما ألتزم بروتين محدد</span>
+                        <small>أعيش يومي دون تخطيط أو روتين ثابت</small>
+                    </button>
+                    <button class="response-btn" data-value="2">
+                        <span>2 - أحاول ولكن أجد صعوبة في الاستمرارية</span>
+                        <small>أبدأ بحماس ولكن سرعان ما أتوقف</small>
+                    </button>
+                    <button class="response-btn" data-value="3">
+                        <span>3 - ألتزم ببعض العادات الأساسية فقط</span>
+                        <small>أحافظ على العبادات الأساسية ولكن دون روتين شامل</small>
+                    </button>
+                    <button class="response-btn" data-value="4">
+                        <span>4 - لدي روتين منتظم وأحاول الالتزام به</span>
+                        <small>أخطط ليومي وأسعى للالتزام بالعبادات والعادات الحسنة</small>
+                    </button>
+                    <button class="response-btn" data-value="5">
+                        <span>5 - التزم بروتين يومي منتظم كأسلوب حياة</span>
+                        <small>كالنبي ﷺ الذي كانت له أوقات محددة لكل شيء</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev" onclick="prevQuestion()">السابق</button>
+                    <button class="nav-btn next" onclick="nextQuestion()">السؤال التالي</button>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" id="question-4">
+                <div class="question-header">
+                    <div class="dimension-tag">الزهد في الشهوات الضارة</div>
+                    <div>السؤال 4 من 5</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-4"></div>
+                </div>
+                <div class="question-text">
+                    كيف تتعامل مع رغباتك ورغباتك المادية غير الضرورية؟
+                </div>
+                <div class="response-options">
+                    <button class="response-btn" data-value="1">
+                        <span>1 - أسعى لتلبية جميع رغباتي قدر الإمكان</span>
+                        <small>أعتقد أن الحياة للتمتع بكل ما هو متاح</small>
+                    </button>
+                    <button class="response-btn" data-value="2">
+                        <span>2 - أحاول التحكم ولكن أستسلم بسهولة</span>
+                        <small>أشعر بالذنب بعد الإفراط ولكن أعود للاستسلام</small>
+                    </button>
+                    <button class="response-btn" data-value="3">
+                        <span>3 - أتحكم في بعض الرغبات وأستسلم للبعض الآخر</span>
+                        <small>لدي قدر معقول من التحكم ولكن مع بعض التنازلات</small>
+                    </button>
+                    <button class="response-btn" data-value="4">
+                        <span>4 - أحاول الاعتدال وأتجنب الإفراط</span>
+                        <small>أراقب رغباتي وأسعى للتوازن في تلبية الاحتياجات</small>
+                    </button>
+                    <button class="response-btn" data-value="5">
+                        <span>5 - أزهد في غير الضروري وأرضى بالقليل</span>
+                        <small>كالنبي ﷺ الذي كان يفضل العيش البسيط والتقشفي</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev" onclick="prevQuestion()">السابق</button>
+                    <button class="nav-btn next" onclick="nextQuestion()">السؤال التالي</button>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card" id="question-5">
+                <div class="question-header">
+                    <div class="dimension-tag">التوازن الدنيوي الروحي</div>
+                    <div>السؤال 5 من 5</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-5"></div>
+                </div>
+                <div class="question-text">
+                    كيف توازن وقتك بين العبادة، العمل، الأسرة، والتطوير الشخصي؟
+                </div>
+                <div class="response-options">
+                    <button class="response-btn" data-value="1">
+                        <span>1 - أركز على مجال واحد غالباً وأهمل الآخرين</span>
+                        <small>أشعر بعدم التوازن في حياتي مع إهمال مجالات مهمة</small>
+                    </button>
+                    <button class="response-btn" data-value="2">
+                        <span>2 - أجد صعوبة في الموازنة وغالباً أشعر بالإرهاق</span>
+                        <small>أحاول معالجة جميع المجالات ولكن أشعر بالتمدد الشديد</small>
+                    </button>
+                    <button class="response-btn" data-value="3">
+                        <span>3 - أدير الأمور بشكل معقول لكن يمكنني التحسين</span>
+                        <small>أحافظ على توازن أساسي لكن بعض المجالات تحتاج مزيداً من الاهتمام</small>
+                    </button>
+                    <button class="response-btn" data-value="4">
+                        <span>4 - أخصص وقتاً بوعي لكل مجال مهم</span>
+                        <small>لدي جدول يغطي المسؤوليات الروحية والدنيوية</small>
+                    </button>
+                    <button class="response-btn" data-value="5">
+                        <span>5 - أحافظ على توازن متناغم كنمط حياة واعٍ</span>
+                        <small>كالنبي ﷺ الذي وازن بشكل مثالي بين كونه عابداً، قائداً، ورجل عائلة</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev" onclick="prevQuestion()">السابق</button>
+                    <button class="nav-btn next" onclick="submitAssessment()">إرسال التقييم</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results">
+        <div class="container results-container">
+            <div class="results-header">
+                <h2>نتائج تقييم شخصيتك</h2>
+                <p>بناءً على إجاباتك، إليك كيف تقيس نفسك عبر الأبعاد الخمسة للشخصية النبوية</p>
+            </div>
+
+            <div class="score-summary">
+                <div class="overall-score" id="overall-score">0</div>
+                <div class="score-text">النتيجة الإجمالية للتوازن الشخصي</div>
+                <div class="score-message" id="score-message">
+                    جاري تحليل إجاباتك...
+                </div>
+            </div>
+
+            <!-- AI Analysis -->
+            <div class="ai-analysis" id="ai-analysis">
+                <div class="ai-header">
+                    <i class="fas fa-robot ai-icon"></i>
+                    <h3>تحليل الذكاء الاصطناعي</h3>
+                </div>
+                <div class="ai-analysis-content" id="ai-analysis-content">
+                    <div class="ai-thinking" id="ai-thinking">
+                        <span>جاري تحليل إجاباتك باستخدام الذكاء الاصطناعي...</span>
+                        <div class="ai-dot"></div>
+                        <div class="ai-dot"></div>
+                        <div class="ai-dot"></div>
+                    </div>
+                    <div id="ai-analysis-text" style="display: none;">
+                        <!-- سيتم ملؤه بالتحليل -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="radar-chart-container">
+                <div class="chart-title">ملفك الشخصي للتوازن</div>
+                <div class="radar-chart">
+                    <div class="chart-area">
+                        <canvas id="radarChart" width="500" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dimension-scores">
+                <div class="dimension-score">
+                    <div class="dimension-name">
+                        <i class="fas fa-handshake" style="color: #2e8b57;"></i>
+                        <span>الخلق القويم</span>
+                    </div>
+                    <div class="dimension-score-bar">
+                        <div class="dimension-score-fill" id="ethics-score" style="background-color: #2e8b57;"></div>
+                    </div>
+                    <div class="dimension-score-value" id="ethics-value">0</div>
+                </div>
+                <div class="dimension-score">
+                    <div class="dimension-name">
+                        <i class="fas fa-brain" style="color: #1a5f7a;"></i>
+                        <span>التوازن العاطفي</span>
+                    </div>
+                    <div class="dimension-score-bar">
+                        <div class="dimension-score-fill" id="balance-score" style="background-color: #1a5f7a;"></div>
+                    </div>
+                    <div class="dimension-score-value" id="balance-value">0</div>
+                </div>
+                <div class="dimension-score">
+                    <div class="dimension-name">
+                        <i class="fas fa-calendar-check" style="color: #6a5acd;"></i>
+                        <span>الانضباط والمواظبة</span>
+                    </div>
+                    <div class="dimension-score-bar">
+                        <div class="dimension-score-fill" id="discipline-score" style="background-color: #6a5acd;"></div>
+                    </div>
+                    <div class="dimension-score-value" id="discipline-value">0</div>
+                </div>
+                <div class="dimension-score">
+                    <div class="dimension-name">
+                        <i class="fas fa-leaf" style="color: #ff8c00;"></i>
+                        <span>الزهد في الشهوات الضارة</span>
+                    </div>
+                    <div class="dimension-score-bar">
+                        <div class="dimension-score-fill" id="detachment-score" style="background-color: #ff8c00;"></div>
+                    </div>
+                    <div class="dimension-score-value" id="detachment-value">0</div>
+                </div>
+                <div class="dimension-score">
+                    <div class="dimension-name">
+                        <i class="fas fa-universal-access" style="color: #20b2aa;"></i>
+                        <span>التوازن الدنيوي الروحي</span>
+                    </div>
+                    <div class="dimension-score-bar">
+                        <div class="dimension-score-fill" id="harmony-score" style="background-color: #20b2aa;"></div>
+                    </div>
+                    <div class="dimension-score-value" id="harmony-value">0</div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>توصيات مخصصة للنمو</h3>
+                <ul class="recommendation-list" id="recommendations-list">
+                    <li>
+                        <i class="fas fa-lightbulb rec-icon"></i>
+                        <div id="rec-1">
+                            <strong>جاري إعداد التوصيات...</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-lightbulb rec-icon"></i>
+                        <div id="rec-2">
+                            <strong>جاري إعداد التوصيات...</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-lightbulb rec-icon"></i>
+                        <div id="rec-3">
+                            <strong>جاري إعداد التوصيات...</strong>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn retake" id="retake-btn">
+                    <i class="fas fa-redo"></i> إعادة التقييم
+                </button>
+                <button class="action-btn download" onclick="downloadResults()">
+                    <i class="fas fa-download"></i> تحميل التقرير
+                </button>
+                <button class="action-btn share" onclick="shareResults()">
+                    <i class="fas fa-share-alt"></i> مشاركة النتائج
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>التوازن </h3>
+                    <p>منصة تفاعلية للتقييم الذاتي وتطوير الشخصية بناءً على الشخصية المتوازنة لرسول الله محمد ﷺ.</p>
+                    <div class="arabic-quote">
+                        "إنما بعثت لأتمم مكارم الأخلاق"
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#traits">أبعاد الشخصية</a></li>
+                        <li><a href="#assessment">إجراء التقييم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>موارد تطوير الشخصية</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.youtube.com/watch?v=RgWwS1zd4fg" onclick="alert('سيتم إضافة هذا القسم قريباً')">قصص نبوية</a></li>
+                        <li><a href="https://www.youtube.com/live/N7Cmxr0Tp_E?si=p_R9LZCLMtu4RZIO" onclick="alert('سيتم إضافة هذا القسم قريباً')">ممارسات يومية</a></li>
+                        <li><a href="https://youtu.be/GLW0vl8mkW0?si=iorj0AvbBnfF7o4E" onclick="alert('سيتم إضافة هذا القسم قريباً')">خطة تطوير 30 يوماً</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© <span id="current-year">2024</span> التوازن برمجة ابراهيم التونسي تحت اشراف الدكتور عادل بنحسين . جميع الحقوق محفوظة.</p>
+                <p>صلى الله على سيدنا محمد وعلى آله وصحبه وسلم.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let currentQuestion = 0;
+        const totalQuestions = 5;
+        const responses = new Array(totalQuestions).fill(0);
+        const questionCards = document.querySelectorAll('.question-card');
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Hide all questions initially
+            questionCards.forEach(card => card.style.display = 'none');
+            
+            // Set up event listeners for buttons
+            document.getElementById('start-assessment-btn').addEventListener('click', startAssessment);
+            document.getElementById('begin-btn').addEventListener('click', startAssessment);
+            document.getElementById('retake-btn').addEventListener('click', resetAssessment);
+            
+            // Set up response buttons
+            document.querySelectorAll('.response-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const questionCard = this.closest('.question-card');
+                    questionCard.querySelectorAll('.response-btn').forEach(b => {
+                        b.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    
+                    const questionId = questionCard.id;
+                    const questionNum = parseInt(questionId.split('-')[1]);
+                    const value = parseInt(this.getAttribute('data-value'));
+                    responses[questionNum - 1] = value;
+                });
+            });
+            
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && !event.target.closest('.mobile-menu-btn')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+        
+        // Start assessment
+        function startAssessment() {
+            document.getElementById('assessment-intro').style.display = 'none';
+            responses.fill(0);
+            currentQuestion = 0;
+            showQuestion(1);
+            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Show specific question
+        function showQuestion(questionNum) {
+            // Hide all questions
+            questionCards.forEach(card => {
+                card.style.display = 'none';
+                card.classList.remove('active');
+            });
+            
+            // Show the requested question
+            const questionCard = document.getElementById(`question-${questionNum}`);
+            questionCard.style.display = 'block';
+            questionCard.classList.add('active');
+            
+            // Update progress bar
+            const progressFill = questionCard.querySelector('.progress-fill');
+            const progressPercent = ((questionNum - 1) / totalQuestions) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+            
+            // Update current question
+            currentQuestion = questionNum;
+            
+            // Update navigation buttons
+            updateNavigationButtons();
+            
+            // Update dimension tag
+            updateDimensionTag(questionNum);
+        }
+        
+        // Update dimension tag
+        function updateDimensionTag(questionNum) {
+            let dimension = '';
+            if (questionNum === 1) dimension = 'الخلق القويم';
+            else if (questionNum === 2) dimension = 'التوازن العاطفي';
+            else if (questionNum === 3) dimension = 'الانضباط والمواظبة';
+            else if (questionNum === 4) dimension = 'الزهد في الشهوات الضارة';
+            else if (questionNum === 5) dimension = 'التوازن الدنيوي الروحي';
+            
+            const tagElement = document.querySelector('.question-card.active .dimension-tag');
+            if (tagElement) {
+                tagElement.textContent = dimension;
+            }
+        }
+        
+        // Update navigation buttons
+        function updateNavigationButtons() {
+            const prevBtn = document.querySelector('.question-card.active .nav-btn.prev');
+            const nextBtn = document.querySelector('.question-card.active .nav-btn.next');
+            
+            if (prevBtn) {
+                prevBtn.disabled = currentQuestion === 1;
+            }
+            
+            if (nextBtn) {
+                if (currentQuestion === totalQuestions) {
+                    nextBtn.textContent = 'إرسال التقييم';
+                    nextBtn.onclick = submitAssessment;
+                } else {
+                    nextBtn.textContent = 'السؤال التالي';
+                    nextBtn.onclick = nextQuestion;
+                }
+            }
+        }
+        
+        // Go to next question
+        function nextQuestion() {
+            // Check if current question has an answer
+            if (responses[currentQuestion - 1] === 0) {
+                alert('يرجى اختيار إجابة قبل الانتقال للسؤال التالي');
+                return;
+            }
+            
+            if (currentQuestion < totalQuestions) {
+                showQuestion(currentQuestion + 1);
+            }
+        }
+        
+        // Go to previous question
+        function prevQuestion() {
+            if (currentQuestion > 1) {
+                showQuestion(currentQuestion - 1);
+            }
+        }
+        
+        // Submit assessment
+        function submitAssessment() {
+            // Check if current question has an answer
+            if (responses[currentQuestion - 1] === 0) {
+                alert('يرجى اختيار إجابة قبل إرسال التقييم');
+                return;
+            }
+            
+            // Check for any unanswered questions
+            const unanswered = [];
+            for (let i = 0; i < totalQuestions; i++) {
+                if (responses[i] === 0) {
+                    unanswered.push(i + 1);
+                }
+            }
+            
+            if (unanswered.length > 0) {
+                const confirmSubmit = confirm(`لديك ${unanswered.length} أسئلة بدون إجابة. هل تريد المتابعة؟`);
+                if (!confirmSubmit) {
+                    showQuestion(unanswered[0]);
+                    return;
+                }
+            }
+            
+            // Calculate results
+            calculateResults();
+            
+            // Hide assessment section and show results
+            document.getElementById('assessment').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Calculate results
+        function calculateResults() {
+            // Show AI thinking animation
+            document.getElementById('ai-thinking').style.display = 'flex';
+            document.getElementById('ai-analysis-text').style.display = 'none';
+            
+            // Calculate scores (each question worth 20 points)
+            const ethicsScore = responses[0] * 20; // Question 1
+            const balanceScore = responses[1] * 20; // Question 2
+            const disciplineScore = responses[2] * 20; // Question 3
+            const detachmentScore = responses[3] * 20; // Question 4
+            const harmonyScore = responses[4] * 20; // Question 5
+            
+            // Calculate overall score
+            const overallScore = Math.round((ethicsScore + balanceScore + disciplineScore + detachmentScore + harmonyScore) / 5);
+            
+            // Update scores on the page
+            document.getElementById('overall-score').textContent = overallScore;
+            document.getElementById('ethics-value').textContent = ethicsScore;
+            document.getElementById('balance-value').textContent = balanceScore;
+            document.getElementById('discipline-value').textContent = disciplineScore;
+            document.getElementById('detachment-value').textContent = detachmentScore;
+            document.getElementById('harmony-value').textContent = harmonyScore;
+            
+            // Animate progress bars
+            setTimeout(() => {
+                document.getElementById('ethics-score').style.width = `${ethicsScore}%`;
+                document.getElementById('balance-score').style.width = `${balanceScore}%`;
+                document.getElementById('discipline-score').style.width = `${disciplineScore}%`;
+                document.getElementById('detachment-score').style.width = `${detachmentScore}%`;
+                document.getElementById('harmony-score').style.width = `${harmonyScore}%`;
+            }, 500);
+            
+            // Update score message
+            updateScoreMessage(overallScore);
+            
+            // Generate AI analysis after delay
+            setTimeout(() => {
+                generateAiAnalysis(overallScore, ethicsScore, balanceScore, disciplineScore, detachmentScore, harmonyScore);
+                updateRecommendations(ethicsScore, balanceScore, disciplineScore, detachmentScore, harmonyScore);
+                createRadarChart(ethicsScore, balanceScore, disciplineScore, detachmentScore, harmonyScore);
+                
+                // Hide thinking animation and show analysis
+                document.getElementById('ai-thinking').style.display = 'none';
+                document.getElementById('ai-analysis-text').style.display = 'block';
+            }, 2000);
+        }
+        
+        // Update score message
+        function updateScoreMessage(score) {
+            const scoreMessage = document.getElementById('score-message');
+            
+            if (score >= 85) {
+                scoreMessage.textContent = "ممتاز! شخصيتك تعكس توازناً نبويًا رائعاً. استمر في هذا المسار وكن قدوة للآخرين.";
+            } else if (score >= 70) {
+                scoreMessage.textContent = "جيد جداً! لديك أساس قوي من القيم النبوية مع فرص للتحسين في بعض الجوانب.";
+            } else if (score >= 60) {
+                scoreMessage.textContent = "مقبول. هناك بدايات جيدة تحتاج للرعاية والتطوير المستمر.";
+            } else if (score >= 50) {
+                scoreMessage.textContent = "يحتاج لتحسين. الفرصة متاحة للنمو والتطور نحو الشخصية المتوازنة.";
+            } else {
+                scoreMessage.textContent = "يحتاج لاهتمام خاص. البداية الآن أفضل من لا شيء. ابدأ برحلة التطوير الذاتي.";
+            }
+        }
+        
+        // Generate AI analysis
+        function generateAiAnalysis(overall, ethics, balance, discipline, detachment, harmony) {
+            const aiText = document.getElementById('ai-analysis-text');
+            
+            // Determine analysis level
+            let analysisLevel = 'low';
+            if (overall >= 70) analysisLevel = 'high';
+            else if (overall >= 50) analysisLevel = 'medium';
+            
+            // Analysis texts
+            const analyses = {
+                high: [
+                    "تحليلي المتقدم يكشف شخصية متوازنة ومتناغمة. أداؤك في معظم الأبعاد استثنائي ويعكس التزاماً عميقاً بالقيم النبوية.",
+                    "نتائج ممتازة تظهر فهماً عميقاً للتوازن النبوي. يمكنك الآن التركيز على نقل خبرتك للآخرين والتوجيه."
+                ],
+                medium: [
+                    "تحليلي يظهر توازناً معقولاً مع نقاط قوة محددة. ركز على تحويل الممارسات الجيدة إلى عادات راسخة.",
+                    "لديك أساس جيد يمكن البناء عليه. الاستمرارية والمواظبة على الممارسات الإيجابية هو الحل الأمثل."
+                ],
+                low: [
+                    "تحليلي يظهر أن لديك مجالاً واسعاً للتطوير. التركيز على بناء عادات صغيرة يومية سيكون نقطة انطلاق ممتازة.",
+                    "النتائج تشير إلى حاجة لتعزيز الوعي الذاتي. جرب ممارسة التأمل اليومي لتحسين التواصل مع ذاتك."
+                ]
+            };
+            
+            // Choose random analysis
+            const randomAnalysis = analyses[analysisLevel][Math.floor(Math.random() * analyses[analysisLevel].length)];
+            
+            // Build analysis HTML
+            let analysisHTML = `<p><strong>📊 تحليل متقدم:</strong> ${randomAnalysis}</p>`;
+            
+            // Add detailed analysis for each dimension
+            analysisHTML += `<p><strong>🔍 نظرة تفصيلية:</strong></p><ul>`;
+            
+            const dimensions = [
+                {name: 'الخلق القويم', score: ethics},
+                {name: 'التوازن العاطفي', score: balance},
+                {name: 'الانضباط والمواظبة', score: discipline},
+                {name: 'الزهد في الشهوات', score: detachment},
+                {name: 'التوازن الدنيوي الروحي', score: harmony}
+            ];
+            
+            dimensions.forEach(dim => {
+                let comment = '';
+                if (dim.score >= 70) comment = "أداء استثنائي";
+                else if (dim.score >= 50) comment = "مستوى جيد";
+                else comment = "فرصة للتطوير";
+                
+                analysisHTML += `<li><strong>${dim.name}:</strong> ${comment} (${dim.score}/100)</li>`;
+            });
+            
+            analysisHTML += `</ul>`;
+            
+            // Add future vision
+            let futureVision = '';
+            if (overall >= 85) {
+                futureVision = "مستعد لقيادة مبادرات تطوير الشخصية في مجتمعك.";
+            } else if (overall >= 70) {
+                futureVision = "خلال 3-6 أشهر من الممارسة المنتظمة، ستصل لمستوى التميز.";
+            } else if (overall >= 50) {
+                futureVision = "بمعدل تحسن 10% شهرياً، ستصل لمستوى جيد خلال 4-5 أشهر.";
+            } else {
+                futureVision = "التركيز على هدف واحد صغير أسبوعياً سيحول مسار تطورك خلال 3 أشهر.";
+            }
+            
+            analysisHTML += `<p><strong>💡 رؤية مستقبلية:</strong> ${futureVision}</p>`;
+            
+            aiText.innerHTML = analysisHTML;
+        }
+        
+        // Update recommendations
+        function updateRecommendations(ethics, balance, discipline, detachment, harmony) {
+            const recommendations = [];
+            
+            // Ethics recommendations
+            if (ethics < 70) {
+                recommendations.push({
+                    title: 'تحسين الخلق القويم',
+                    text: 'تدرب على قول الحق في مواقف بسيطة يومياً. ابدأ بالاعتراف بالأخطاء الصغيرة.'
+                });
+            }
+            
+            // Balance recommendations
+            if (balance < 70) {
+                recommendations.push({
+                    title: 'تنمية التوازن العاطفي',
+                    text: 'عند الغضب، عد إلى 10 قبل التحدث. خذ نفساً عميقاً 3 مرات.'
+                });
+            }
+            
+            // Discipline recommendations
+            if (discipline < 70) {
+                recommendations.push({
+                    title: 'تعزيز الانضباط والمواظبة',
+                    text: 'حدد وقتاً ثابتاً للنوم والاستيقاظ. ابدأ بروتين صباحي بسيط.'
+                });
+            }
+            
+            // Fill with general recommendations if needed
+            while (recommendations.length < 3) {
+                const generalTips = [
+                    {title: 'المراجعة الأسبوعية', text: 'خصص وقتاً أسبوعياً لمراجعة سلوكك وتقييم تقدمك.'},
+                    {title: 'الصحبة الصالحة', text: 'احرص على مصاحبة الأشخاص الإيجابيين الذين يشجعونك على التحسين.'},
+                    {title: 'القراءة اليومية', text: 'اقرأ ولو صفحة واحدة يومياً من كتب تطوير الشخصية والأخلاق.'}
+                ];
+                recommendations.push(generalTips[recommendations.length % generalTips.length]);
+            }
+            
+            // Update recommendations in the UI
+            for (let i = 0; i < 3; i++) {
+                const recElement = document.getElementById(`rec-${i + 1}`);
+                if (recElement && recommendations[i]) {
+                    recElement.innerHTML = `<strong>${recommendations[i].title}:</strong> ${recommendations[i].text}`;
+                }
+            }
+        }
+        
+        // Create radar chart
+        function createRadarChart(ethics, balance, discipline, detachment, harmony) {
+            const canvas = document.getElementById('radarChart');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Center of the radar
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = Math.min(centerX, centerY) * 0.7;
+            
+            // Number of dimensions
+            const dimensions = 5;
+            const angleStep = (2 * Math.PI) / dimensions;
+            
+            // Dimension names
+            const dimensionNames = ['الخلق', 'التوازن', 'الانضباط', 'الزهد', 'الانسجام'];
+            
+            // Normalize scores (0-1) for radar chart
+            const scores = [ethics, balance, discipline, detachment, harmony].map(score => score / 100);
+            
+            // Draw background circles
+            ctx.strokeStyle = '#e9ecef';
+            ctx.lineWidth = 1;
+            
+            for (let i = 1; i <= 5; i++) {
+                const circleRadius = radius * (i / 5);
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, circleRadius, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+            
+            // Draw dimension lines
+            ctx.strokeStyle = '#b0b7c3';
+            ctx.lineWidth = 1;
+            
+            for (let i = 0; i < dimensions; i++) {
+                const angle = i * angleStep - Math.PI / 2;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                // Draw dimension labels
+                const labelRadius = radius * 1.15;
+                const labelX = centerX + labelRadius * Math.cos(angle);
+                const labelY = centerY + labelRadius * Math.sin(angle);
+                
+                ctx.font = 'bold 16px Cairo';
+                ctx.fillStyle = '#1a5f7a';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(dimensionNames[i], labelX, labelY);
+            }
+            
+            // Draw data polygon
+            ctx.beginPath();
+            for (let i = 0; i < dimensions; i++) {
+                const angle = i * angleStep - Math.PI / 2;
+                const scoreRadius = radius * scores[i];
+                const x = centerX + scoreRadius * Math.cos(angle);
+                const y = centerY + scoreRadius * Math.sin(angle);
+                
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.closePath();
+            
+            // Fill polygon
+            ctx.fillStyle = 'rgba(26, 95, 122, 0.3)';
+            ctx.fill();
+            
+            // Stroke polygon
+            ctx.strokeStyle = '#1a5f7a';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Draw data points
+            for (let i = 0; i < dimensions; i++) {
+                const angle = i * angleStep - Math.PI / 2;
+                const scoreRadius = radius * scores[i];
+                const x = centerX + scoreRadius * Math.cos(angle);
+                const y = centerY + scoreRadius * Math.sin(angle);
+                
+                ctx.beginPath();
+                ctx.arc(x, y, 6, 0, 2 * Math.PI);
+                ctx.fillStyle = '#1a5f7a';
+                ctx.fill();
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+        
+        // Reset assessment
+        function resetAssessment() {
+            // Reset responses
+            responses.fill(0);
+            currentQuestion = 0;
+            
+            // Reset button selections
+            document.querySelectorAll('.response-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Reset UI
+            document.getElementById('assessment-intro').style.display = 'block';
+            document.getElementById('assessment').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            
+            // Hide all questions
+            questionCards.forEach(card => {
+                card.style.display = 'none';
+                card.classList.remove('active');
+            });
+            
+            // Scroll to assessment section
+            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Download results
+        function downloadResults() {
+            alert('ميزة تحميل التقرير ستكون متاحة قريباً في التحديث القادم!');
+        }
+        
+        // Share results
+        function shareResults() {
+            const overallScore = document.getElementById('overall-score').textContent;
+            const message = `حصلت على نتيجة ${overallScore}/100 في تقييم التوازن ! جرب التقييم بنفسك.`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'نتيجة تقييم التوازن ',
+                    text: message
+                });
+            } else {
+                alert('يمكنك نسخ الرابط ومشاركته مع أصدقائك: ' + window.location.href);
+            }
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu
+                    document.getElementById('main-nav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
